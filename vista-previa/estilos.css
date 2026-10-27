@@ -594,8 +594,9 @@ a.line-h:hover b { color: var(--gold-2); }
 @media (max-width: 640px) { .medidas { grid-template-columns: 1fr; } .vg .ctas .btn { width: 100%; justify-content: center; } }
 
 /* fotos del estudio */
-.office { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 70px); align-items: end; }
-.office .otxt { align-self: center; padding-right: clamp(0px, 2vw, 30px); }
+.office { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.8vw, 24px); }
+.office .otxt { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(30px, 5vw, 80px); align-items: end; margin-bottom: clamp(14px, 2vw, 26px); }
+.office .otxt .kicker { grid-column: 1 / -1; }
 .office h3 { margin: 16px 0 0; font: 500 clamp(28px, 2.8vw, 38px)/1.1 var(--serif); }
 .office h3 em { color: var(--gold); }
 .office p { margin: 18px 0 0; color: var(--muted, #5b6676); }
@@ -605,5 +606,24 @@ a.line-h:hover b { color: var(--gold-2); }
 .office figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; font: 600 11.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, #0d1828cc); }
 @media (max-width: 900px) {
   .office { grid-template-columns: 1fr 1fr; }
-  .office .otxt { grid-column: 1 / -1; padding: 0; }
+  .office .otxt { grid-template-columns: 1fr; }
+}
+
+/* video de Silvana */
+.video { background: var(--navy); color: var(--white); }
+.video .vgrid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 5vw, 84px); align-items: center; }
+.video h2 { margin-top: 18px; color: var(--white); }
+.video h2 em { color: var(--gold-2); }
+.video p { margin: 20px 0 0; color: #ffffffbf; }
+.video .vlink { display: inline-block; margin-top: 26px; font: 600 13px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-2); text-decoration: none; border-bottom: 1px solid #e2cc9666; padding-bottom: 6px; }
+.vbox { position: relative; aspect-ratio: 16 / 9; background: #000; box-shadow: 0 30px 60px #00000066; outline: 1px solid #c8a96866; outline-offset: 14px; }
+.vbox .yt, .vbox iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.vbox img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; opacity: .82; transition: opacity .4s, transform .8s; }
+.vbox .yt:hover img { opacity: 1; }
+.vbox .play { position: absolute; left: 50%; top: 50%; width: 86px; height: 86px; margin: -43px 0 0 -43px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 10px #c8a96833; transition: transform .3s; }
+.vbox .play::before { content: ""; position: absolute; left: 35px; top: 27px; border-style: solid; border-width: 16px 0 16px 26px; border-color: transparent transparent transparent var(--navy); }
+.vbox .yt:hover .play { transform: scale(1.07); }
+@media (max-width: 900px) {
+  .video .vgrid { grid-template-columns: 1fr; }
+  .vbox { outline-offset: 8px; }
 }
