@@ -1,9 +1,9 @@
 # Publica la web en el hosting de IONOS cada vez que hay cambios en main.
 # Necesita estos secrets del repo (Settings > Secrets and variables > Actions):
-#   FTP_SERVER    servidor FTP de IONOS (por ejemplo, access123456789.webspace-data.io)
-#   FTP_USERNAME  usuario FTP/SFTP de IONOS
+#   FTP_SERVER    servidor SFTP de IONOS (por ejemplo, access123456789.webspace-data.io)
+#   FTP_USERNAME  usuario SFTP de IONOS
 #   FTP_PASSWORD  contraseña de ese usuario
-#   FTP_DIR       (opcional) carpeta del dominio en el webspace, terminada en "/". Por defecto, la raíz "./"
+#   FTP_DIR       (opcional) carpeta del dominio en el webspace. Por defecto, la raíz "/"
 name: Publicar en IONOS
 
 on:
@@ -21,16 +21,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Subir archivos por FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: ${{ secrets.FTP_DIR || './' }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            .github/**
-            README.md
+      - name: Instalar lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Subir archivos por SFTP
+        env:
+          SERVER: ${{ secrets.FTP_SERVER }}
+          USERNAME: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          host="${SERVER#*://}"; host="${host%%/*}"
+          lftp --env-password "sftp://${USERNAME}@${host}" -e "
+            set sftp:auto-confirm yes
+            set net:max-retries 2
+            set net:timeout 30
+            mirror --reverse --verbose --only-newer \
+              --exclude-glob .git/ --exclude-glob .github/ --exclude-glob .gitignore --exclude-glob README.md \
+              ./ '${DIR:-/}'
+            quit
+          "
