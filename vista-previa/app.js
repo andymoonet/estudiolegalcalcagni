@@ -38,6 +38,17 @@
   // links de WhatsApp con mensaje armado
   $$('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
 
+  // video: carga YouTube recién al tocar play
+  document.querySelectorAll('[data-yt]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0`;
+    f.title = 'Video de la Dra. Calcagni';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    a.replaceWith(f);
+  }));
+
   // filtro de reseñas
   const rf = $('.rfilter');
   if (rf) rf.addEventListener('click', e => {
