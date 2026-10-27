@@ -251,6 +251,21 @@ h2 em { font-style: italic; color: var(--gold); }
   .faq summary { font-size: 21px; }
   .footer .cols { grid-template-columns: 1fr; }
 }
+/* fotos del estudio */
+.office .grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: clamp(16px, 2vw, 28px); align-items: end; }
+.office .otxt { align-self: center; padding-right: clamp(0px, 2vw, 30px); }
+.office h2 { margin-top: 18px; font-size: clamp(34px, 3.8vw, 50px); }
+.office p { margin: 18px 0 0; color: var(--muted); }
+.office .dir { margin-top: 24px; font-size: 16px; color: var(--ink); }
+.office .dir b { display: block; font: 600 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.office figure { margin: 0; position: relative; overflow: hidden; box-shadow: 0 24px 50px #0d182818; }
+.office img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s var(--ease); }
+.office figure:hover img { transform: scale(1.03); }
+.office figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; font: 600 11.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, #0d1828cc); }
+@media (max-width: 900px) {
+  .office .grid { grid-template-columns: 1fr 1fr; }
+  .office .otxt { grid-column: 1 / -1; padding: 0; }
+}
 </style>
 </head>
 <body>
@@ -377,6 +392,21 @@ h2 em { font-style: italic; color: var(--gold); }
       <details name="faq"><summary>Tuve un choque. ¿Firmo lo que me ofrece el seguro?<i></i></summary><p>No firmes ningún acuerdo sin asesorarte, y andá al médico aunque no veas lesiones. El reclamo por daños prescribe a los tres años.</p></details>
       <details name="faq"><summary>Estoy sufriendo violencia, ¿qué hago primero?<i></i></summary><p>Si estás en peligro, llamá al 911. La Línea 144 atiende las 24 horas. Guardá mensajes, audios y fotos, y consultanos: te acompañamos a hacer la denuncia y a pedir medidas de protección urgentes, con total confidencialidad.</p></details>
       <details name="faq"><summary>¿Cuánto tarda un divorcio?<i></i></summary><p>Desde 2015 no hace falta explicar los motivos. Si hay acuerdo sobre bienes e hijos, suele resolverse en pocos meses; si no, el divorcio sale igual y lo demás se discute aparte.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="office section" id="oficina">
+  <div class="wrap">
+    <div class="grid">
+      <div class="otxt" data-reveal>
+        <span class="kicker">Nuestro estudio</span>
+        <h2>Un lugar tranquilo para <em>hablar en confianza</em></h2>
+        <p>Te recibimos en un espacio cálido y reservado, pensado para que puedas contar lo que te pasa con tiempo y sin apuro. Si preferís, la consulta también puede ser por videollamada.</p>
+        <p class="dir"><b>Dirección</b>Diagonal Roque Sáenz Peña 1219, piso 2, of. 202-203<br>Edificio Libertad · CABA · <a href="https://www.google.com/maps/search/?api=1&amp;query=Diagonal+Roque+S%C3%A1enz+Pe%C3%B1a+1219%2C+CABA" target="_blank" rel="noopener">Ver en el mapa</a></p>
+      </div>
+      <figure data-reveal style="--d:1"><img src="imagenes/estudio-1.jpg" alt="Sala de reuniones del estudio, con mesa de madera y biblioteca" loading="lazy" width="900" height="1125"><figcaption>Sala de reuniones</figcaption></figure>
+      <figure data-reveal style="--d:2"><img src="imagenes/estudio-2.jpg" alt="Oficina de trabajo del estudio, con escritorios y expedientes" loading="lazy" width="900" height="1125"><figcaption>Oficina de trabajo</figcaption></figure>
     </div>
   </div>
 </section>
