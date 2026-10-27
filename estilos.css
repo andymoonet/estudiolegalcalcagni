@@ -627,3 +627,8 @@ a.line-h:hover b { color: var(--gold-2); }
   .video .vgrid { grid-template-columns: 1fr; }
   .vbox { outline-offset: 8px; }
 }
+
+/* testimonios en columnas (sin huecos con 10 tarjetas) */
+.rgrid:not(.two-r) { display: block; columns: 3 300px; column-gap: 22px; }
+.rgrid:not(.two-r) .review { break-inside: avoid; margin-bottom: 22px; }
+.review .q { margin-top: 0; }
