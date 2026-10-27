@@ -252,9 +252,10 @@ h2 em { font-style: italic; color: var(--gold); }
   .footer .cols { grid-template-columns: 1fr; }
 }
 /* fotos del estudio */
-.office .grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: clamp(16px, 2vw, 28px); align-items: end; }
-.office .otxt { align-self: center; padding-right: clamp(0px, 2vw, 30px); }
-.office h2 { margin-top: 18px; font-size: clamp(34px, 3.8vw, 50px); }
+.office .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.8vw, 24px); }
+.office .otxt { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(30px, 5vw, 80px); align-items: end; margin-bottom: clamp(14px, 2vw, 26px); }
+.office .otxt .kicker { grid-column: 1 / -1; }
+.office h2 { margin: 18px 0 0; font-size: clamp(34px, 3.8vw, 50px); }
 .office p { margin: 18px 0 0; color: var(--muted); }
 .office .dir { margin-top: 24px; font-size: 16px; color: var(--ink); }
 .office .dir b { display: block; font: 600 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
@@ -264,7 +265,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .office figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; font: 600 11.5px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, #0d1828cc); }
 @media (max-width: 900px) {
   .office .grid { grid-template-columns: 1fr 1fr; }
-  .office .otxt { grid-column: 1 / -1; padding: 0; }
+  .office .otxt { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -402,11 +403,15 @@ h2 em { font-style: italic; color: var(--gold); }
       <div class="otxt" data-reveal>
         <span class="kicker">Nuestro estudio</span>
         <h2>Un lugar tranquilo para <em>hablar en confianza</em></h2>
-        <p>Te recibimos en un espacio cálido y reservado, pensado para que puedas contar lo que te pasa con tiempo y sin apuro. Si preferís, la consulta también puede ser por videollamada.</p>
+        <div>
+        <p>Estamos en el Edificio Libertad, sobre Diagonal Norte, a dos cuadras del Obelisco. Te recibimos en un espacio cálido y reservado, pensado para que puedas contar lo que te pasa con tiempo y sin apuro. Si preferís, la consulta también puede ser por videollamada.</p>
         <p class="dir"><b>Dirección</b>Diagonal Roque Sáenz Peña 1219, piso 2, of. 202-203<br>Edificio Libertad · CABA · <a href="https://www.google.com/maps/search/?api=1&amp;query=Diagonal+Roque+S%C3%A1enz+Pe%C3%B1a+1219%2C+CABA" target="_blank" rel="noopener">Ver en el mapa</a></p>
+        </div>
       </div>
-      <figure data-reveal style="--d:1"><img src="imagenes/estudio-1.jpg" alt="Sala de reuniones del estudio, con mesa de madera y biblioteca" loading="lazy" width="900" height="1125"><figcaption>Sala de reuniones</figcaption></figure>
-      <figure data-reveal style="--d:2"><img src="imagenes/estudio-2.jpg" alt="Oficina de trabajo del estudio, con escritorios y expedientes" loading="lazy" width="900" height="1125"><figcaption>Oficina de trabajo</figcaption></figure>
+      <figure data-reveal><img src="imagenes/estudio-edificio.jpg" alt="Edificio Libertad sobre Diagonal Norte, con el Obelisco al fondo" loading="lazy" width="900" height="1125"><figcaption>Edificio Libertad</figcaption></figure>
+      <figure data-reveal style="--d:1"><img src="imagenes/estudio-entrada.jpg" alt="Entrada del Edificio Libertad" loading="lazy" width="650" height="812"><figcaption>La entrada</figcaption></figure>
+      <figure data-reveal style="--d:2"><img src="imagenes/estudio-1.jpg" alt="Sala de reuniones del estudio, con mesa de madera y biblioteca" loading="lazy" width="900" height="1125"><figcaption>Sala de reuniones</figcaption></figure>
+      <figure data-reveal style="--d:3"><img src="imagenes/estudio-2.jpg" alt="Oficina de trabajo del estudio, con escritorios y expedientes" loading="lazy" width="900" height="1125"><figcaption>Oficina de trabajo</figcaption></figure>
     </div>
   </div>
 </section>
