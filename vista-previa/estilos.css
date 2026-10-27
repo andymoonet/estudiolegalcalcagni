@@ -564,3 +564,5 @@ h2 em { font-style: italic; color: var(--gold); }
 .matrix .btn { width: 100%; justify-content: center; margin-top: 24px; }
 @media (max-width: 1000px) { .biz .vs, .biz .diag { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .matrix .row { grid-template-columns: 1fr 86px; } }
+
+.chip-s { font: 500 13.5px/1 var(--sans); padding: 10px 14px; border: 1px solid var(--gold); color: var(--navy); background: #c8a9681a; }
