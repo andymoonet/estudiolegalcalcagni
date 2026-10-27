@@ -443,7 +443,7 @@ h2 em { font-style: italic; color: var(--gold); }
 .where dd a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .map { position: relative; min-height: 420px; background: #e9e4d8; overflow: hidden; }
 .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.map .pin { position: absolute; left: 38%; top: 64%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; }
+.map .pin { position: absolute; left: 38%; top: 58%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; }
 .map .pin span { background: var(--navy); color: var(--white); font: 600 13px/1 var(--sans); padding: 10px 14px; white-space: nowrap; box-shadow: 0 10px 24px #0d182840; }
 .map .pin i { width: 14px; height: 14px; background: var(--gold); border: 3px solid var(--white); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 0 0 #c8a968aa; animation: ping 2.2s ease-out infinite; }
 @keyframes ping { to { box-shadow: 0 0 0 22px #c8a96800; } }
@@ -566,3 +566,29 @@ h2 em { font-style: italic; color: var(--gold); }
 @media (max-width: 640px) { .matrix .row { grid-template-columns: 1fr 86px; } }
 
 .chip-s { font: 500 13.5px/1 var(--sans); padding: 10px 14px; border: 1px solid var(--gold); color: var(--navy); background: #c8a9681a; }
+
+
+/* violencia de género */
+.vg { background: var(--paper); position: relative; overflow: hidden; }
+.vg::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #9a3b2e; }
+.vg .grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+.vg h2 { margin-top: 18px; }
+.vg .kicker { color: #9a3b2e; }
+.medidas { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 40px; background: var(--line); border: 1px solid var(--line); }
+.medidas li { background: var(--white); padding: 22px 24px 22px 54px; position: relative; }
+.medidas li::before { content: ""; position: absolute; left: 22px; top: 25px; width: 18px; height: 18px; border-radius: 50%; border: 1px solid #9a3b2e; }
+.medidas li::after { content: ""; position: absolute; left: 28px; top: 30px; width: 6px; height: 4px; border-left: 1.5px solid #9a3b2e; border-bottom: 1.5px solid #9a3b2e; transform: rotate(-45deg); }
+.medidas b { display: block; font: 500 22px/1.2 var(--serif); color: var(--navy); }
+.medidas span { display: block; margin-top: 6px; font-size: 14.5px; color: var(--muted); }
+.vg .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.btn.urg { background: #9a3b2e; border-color: #9a3b2e; color: var(--white); }
+.btn.urg:hover { background: transparent; color: #9a3b2e; }
+.help { background: var(--navy); color: var(--white); padding: clamp(28px, 3.5vw, 40px); position: sticky; top: 100px; }
+.help .q { font: 500 italic 26px/1.3 var(--serif); color: var(--gold-2); padding-bottom: 22px; border-bottom: 1px solid #ffffff1f; }
+.line-h { display: grid; grid-template-columns: 78px 1fr; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid #ffffff1f; text-decoration: none; color: inherit; }
+.line-h b { font: 600 34px/1 var(--serif); color: var(--white); }
+.line-h span { font-size: 14.5px; color: #ffffffbf; }
+a.line-h:hover b { color: var(--gold-2); }
+.help .sm { margin-top: 18px; font-size: 13.5px; color: #ffffff99; }
+@media (max-width: 1000px) { .vg .grid { grid-template-columns: 1fr; } .help { position: static; } }
+@media (max-width: 640px) { .medidas { grid-template-columns: 1fr; } .vg .ctas .btn { width: 100%; justify-content: center; } }
