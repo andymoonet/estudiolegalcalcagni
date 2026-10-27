@@ -51,9 +51,9 @@
   if (form) {
     const topics = {
       familia: { name: 'Familia', docs: ['DNI y partida de matrimonio', 'Partidas de nacimiento de los hijos', 'Recibos de sueldo o ingresos', 'Acuerdos o mensajes previos'] },
-      laboral: { name: 'Laboral', docs: ['Últimos recibos de sueldo', 'Telegramas o cartas documento', 'Fecha de ingreso y de egreso', 'Datos de la ART, si hubo accidente'] },
       sucesiones: { name: 'Sucesiones', docs: ['Partida de defunción', 'Partidas que prueben el parentesco', 'Títulos de inmuebles o autos', 'Testamento, si existe'] },
       accidentes: { name: 'Accidentes', docs: ['Denuncia policial o de siniestro', 'Datos del seguro de cada parte', 'Fotos y datos de testigos', 'Certificados médicos y gastos'] },
+      violencia: { name: 'Violencia de género', docs: ['Mensajes, audios o capturas', 'Fotos o certificados médicos', 'Denuncias anteriores, si las hay', 'DNI y partidas de los hijos'] },
       penal: { name: 'Penal', docs: ['Copia de la denuncia o citación', 'Mensajes, audios o capturas', 'Datos de testigos', 'Medidas judiciales vigentes'] },
       empresas: { name: 'Empresas', docs: ['Nómina y forma de contratación', 'Contratos vigentes', 'Juicios o reclamos en curso', 'Datos de la ART'] }
     };
