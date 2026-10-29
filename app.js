@@ -42,7 +42,7 @@
   document.querySelectorAll('[data-yt]').forEach(a => a.addEventListener('click', e => {
     e.preventDefault();
     const f = document.createElement('iframe');
-    f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0`;
+    f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&start=${a.dataset.start || 0}`;
     f.title = 'Video de la Dra. Calcagni';
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
