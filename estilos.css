@@ -632,3 +632,27 @@ a.line-h:hover b { color: var(--gold-2); }
 .rgrid:not(.two-r) { display: block; columns: 3 300px; column-gap: 22px; }
 .rgrid:not(.two-r) .review { break-inside: avoid; margin-bottom: 22px; }
 .review .q { margin-top: 0; }
+
+/* notas y guías */
+.phero.note-h { padding-bottom: 100px; }
+.phero.note-h h1 { max-width: 18ch; font-size: clamp(42px, 5.6vw, 76px); }
+.phero .byline { margin-top: 28px; font-size: 14px; color: #ffffffb3; }
+.phero .byline b { color: var(--white); font-weight: 600; }
+.prose { max-width: 68ch; }
+.prose > * + * { margin-top: 20px; }
+.prose h2 { margin-top: 56px; font: 500 clamp(30px, 3.2vw, 40px)/1.12 var(--serif); color: var(--navy); scroll-margin-top: 100px; }
+.prose h2 + * { margin-top: 18px; }
+.prose ul { display: grid; gap: 12px; }
+.prose li { position: relative; padding-left: 26px; }
+.prose li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 1px; background: var(--gold); }
+.prose strong { font-weight: 600; color: var(--navy); }
+.prose a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.note-box { background: var(--paper); border-left: 2px solid var(--gold); padding: 22px 26px; }
+.note-box.alert { background: var(--navy); color: #ffffffd9; }
+.note-box.alert strong { color: var(--white); }
+.prose .disclaimer { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+.aside-box .toc { margin-top: 18px; display: grid; gap: 4px; }
+.aside-box .toc li { padding-left: 0; }
+.aside-box .toc li::before { display: none; }
+.aside-box .toc a { display: block; padding: 8px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); font-size: 15px; }
+.aside-box .toc a:hover { color: var(--navy); border-color: var(--gold); }
