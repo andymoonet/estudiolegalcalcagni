@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /vista-previa/
+
+Sitemap: https://abogadosdebuenosaires.com/sitemap.xml
